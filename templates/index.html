@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../static/styles.css">
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+<title>Code Explainer 🚀</title>
+
+</head>
+<body>
+  <form class="editor" action="/" method="post">
+    <h1>Code Editor</h1>
+    <textarea class="code-input" name="code-input" placeholder="Paste Your Code Here & Get Detailed Explanation">{{data}}</textarea>
+    <button class="submit-button" type="submit" onclick="changeDivValue()">Get Explanation</button>
+  </form>
+  <div class="output">
+    <div class="data">
+      <h1>
+        {{Heading}}
+      </h1>
+        {% for step in Details.split('\n') %}
+          <p>{{ step | safe}}</p>
+        {% endfor %}
+      <h1 class="rightH">About Code Explainer</h1>
+      Welcome to Code Explainer, your ultimate companion for unraveling the mysteries of programming code! 🚀
+      <br>
+      At Code Explainer, we understand that learning to code and understanding complex programming concepts can be a challenging journey. That's why we've created a one-of-a-kind app that aims to make code understandable for everyone, from beginners taking their first steps into coding to seasoned developers tackling intricate projects.
+      <br>
+       <h3>🔍 Code Demystified</h3> Ever encountered a piece of code that left you scratching your head? Our app is here to help! We break down complex code into bite-sized explanations that cover the hows and whys. Whether it's a single line or an entire codebase, we've got you covered.
+       <br>
+       <h3>📚 Diverse Languages and Topics</h3> Our app covers a wide range of programming languages and topics. From Python to JavaScript, from machine learning to web development, our explanations span the entire spectrum of coding. No matter what you're working on, you'll find relevant and insightful explanations here.
+       <br>
+       <h3>🌐 Community-Driven Platform</h3> We're more than an app; we're a community of learners and educators. Users can contribute their own explanations, share their coding knowledge, and learn from others. Together, we're building a vibrant hub of coding wisdom.
+       <br>
+       <h3>🚀 Stay Updated</h3> The world of programming is ever-evolving, and so are we. Our app is continuously updated with the latest trends, languages, and best practices. You'll always be at the cutting edge of coding knowledge.
+      </div>
+  </div>
+</body>
+</html>
