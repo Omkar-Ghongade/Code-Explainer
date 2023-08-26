@@ -43,6 +43,7 @@ To run the **Code Explainer** app locally, follow these steps:
 1. Clone the repository: `git clone https://github.com/your-username/code-explainer.git`
 2. Navigate to the project directory: `cd code-explainer`
 3. Install the required dependencies: `pip install -r requirements.txt`
+4. Create a file named config.py in root directory and add your apikey in this format `api_key="OPENAI_API_KEY"`
 
 ### Usage
 
