@@ -1,8 +1,8 @@
 from flask import Flask, jsonify, redirect,render_template,request
 import openai
-import config
+import isvalid
 # from dotenv import load_dotenv
-openai.api_key = config.api_key
+openai.api_key =""
 
 
 
@@ -34,11 +34,15 @@ def openAI(question):
 
 @app.route('/')
 def index():
-	return render_template('index.html',data="",Heading="",Details="")
+	return render_template('index.html',data="",Heading="",Details="",ApiKey="")
 
 @app.route('/', methods=['POST','GET'])
 def code():
     input_text = request.form['code-input']
+    apikey=request.form['input-box']
+    if isvalid.valid(apikey)==0:
+        return render_template('index.html',data=input_text,Heading="Enter Correct API Key",Details="",ApiKey=apikey)
+    openai.api_key=apikey
     print(input_text)
     input_text+="                                         "
     input_text+="\n Explain me this code step by step"
@@ -49,7 +53,7 @@ def code():
     print(Ans)
     hding="Code Explanation"
     Data=request.form['code-input']
-    return render_template('index.html',data=Data,Heading=hding,Details=Ans)
+    return render_template('index.html',data=Data,Heading=hding,Details=Ans,ApiKey=apikey)
 
 
 
