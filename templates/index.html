@@ -2,23 +2,21 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <link rel="stylesheet" href="../static/styles.css">
 <script src="{{ url_for('static', filename='script.js') }}"></script>
 <title>Code Explainer 🚀</title>
-
 </head>
 <body>
-  <form class="editor" action="/" method="post">
-    <h1>Code Editor</h1>
-    <textarea class="code-input" name="code-input" placeholder="Paste Your Code Here & Get Detailed Explanation" required>{{data}}</textarea>
-    <!-- <br> -->
-    <div class="input-group">
-      <textarea class="input-box" name="input-box" placeholder="Enter The OpenAI AIP Key" required>{{ApiKey}}</textarea>
-    </div>
-    <br>
-    <button class="submit-button" type="submit" onclick="changeDivValue()">Get Explanation</button>
-  </form>
+  <div class="container">
+    <form class="editor" action="/" method="post">
+      <h1>Code Editor</h1>
+      <textarea class="code-input" name="code-input" placeholder="Paste Your Code Here & Get Detailed Explanation" required>{{data}}</textarea>
+      <div class="input-group">
+        <textarea class="input-box" name="input-box" placeholder="Enter The OpenAI AIP Key" required>{{ApiKey}}</textarea>
+      </div>
+      <button class="submit-button" type="submit" onclick="changeDivValue()">Get Explanation</button>
+    </form>
   <div class="output">
     <div class="data">
       <h1>
